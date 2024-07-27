@@ -1,0 +1,89 @@
+:root{
+    --transperancy: transparent;
+}
+
+body, html {
+    margin: 0 auto;
+    padding: 0;
+    height: 100%;
+    overflow: hidden;
+}
+iframe {
+    width: 100%;
+    height: 100%;
+    border: none;
+}
+.overlay {
+    background-color: #25282B;
+    color: white;
+    margin:0px;
+/*             position: relative; */
+    
+    min-height: 100vh;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    margin: 0 auto;
+    max-width: 12in;
+    padding-bottom:100px;
+
+}
+input {
+    font-size: 25px;
+}
+.overlay input, .overlay button {
+    position: absolute;
+    pointer-events: auto; /* Enable interaction with the overlaid elements */
+    opacity: 100; /* Make the elements invisible */
+}
+#home{
+    top:0em;
+    width:8em;
+    height: 5em;
+    background: var(--transperancy);
+    border: none;
+}
+#login{
+    top:0em;
+    translate: 77em;
+    width:9em;
+    height: 5em;
+    background: var(--transperancy);
+    border: none;
+}
+
+#username-overlay {
+    top: 7.5em;
+    width: 46em;
+    height: 1;
+    background: var(--transperancy);
+    padding-top: 3px;
+    padding-bottom: 3px;
+    padding-left: 5px;
+    padding-right: 5px;
+    border:none;
+    color:whitesmoke; 
+}
+#username-overlay:focus {
+    outline:none;
+}
+#password-overlay {
+    top: 10.5em;
+    width: 46em;
+    height: 1;
+    background: var(--transperancy);
+    padding-top: 3px;
+    padding-bottom: 3px;
+    padding-left: 5px;
+    padding-right: 5px;
+    border:none;
+    color:whitesmoke; 
+}
+#password-overlay:focus {
+    outline:none;
+}   
+#submit-overlay {
+    top:26.5em;
+    width:12em;
+    height: 4em;
+    background: var(--transperancy);
+    border: none;
+}

@@ -1,0 +1,41 @@
+services:
+    defender:
+        build: ./blog-app
+        image: blog-web-app
+        container_name: defender-10.9.0.5
+        tty: true
+        networks:
+            net-10.9.0.0:
+                ipv4_address: 10.9.0.5
+    attacker:
+        build: ./attacker
+        image: attacker-web
+        container_name: attacker-10.9.0.7
+        tty: true
+        networks:
+            net-10.9.0.0:
+                ipv4_address: 10.9.0.7
+
+    mongodb:
+        image: mongo:4.4
+        container_name: mongodb-10.9.0.10
+        ports:
+        - "27012:27017"
+        networks:
+            net-10.9.0.0:
+                ipv4_address: 10.9.0.10
+        command: ["mongod", "--bind_ip_all", "--port", "27017"] # Ensure MongoDB binds to all IPs and listens on the specified port
+        environment:
+            MONGO_INITDB_ROOT_USERNAME: root
+            MONGO_INITDB_ROOT_PASSWORD: pass
+        volumes:
+        - ./data:/data/db
+        
+
+networks:
+    net-10.9.0.0:
+        name: net-10.9.0.0
+        ipam:
+            config:
+                - subnet: 10.9.0.0/24
+        

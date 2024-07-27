@@ -1,0 +1,3 @@
+[submodule "blog-app"]
+	path = blog-app
+	url = ./blog-app/
